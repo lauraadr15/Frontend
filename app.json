@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "RideMove",
+    "slug": "ridemove-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": ["*/"],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.ridemove.mobile",
+      "adaptiveIcon": {
+        "backgroundColor": "#0B5FFF"
+      }
+    }
+  }
+}

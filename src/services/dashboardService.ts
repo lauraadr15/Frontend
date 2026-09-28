@@ -1,6 +1,6 @@
-import { AxiosError } from "axios";
 import { apiClient } from "./apiClient";
-import { DashboardResponse, ErrorResponse } from "../types/dto";
+import { extraerMensajeError } from "./errores";
+import { DashboardResponse } from "../types/dto";
 
 export const dashboardService = {
   async obtenerResumen(): Promise<DashboardResponse> {
@@ -8,8 +8,7 @@ export const dashboardService = {
       const respuesta = await apiClient.get<DashboardResponse>("/api/dashboard");
       return respuesta.data;
     } catch (error) {
-      const axiosError = error as AxiosError<ErrorResponse>;
-      throw new Error(axiosError.response?.data?.mensaje ?? "No se pudo cargar el dashboard");
+      throw new Error(extraerMensajeError(error));
     }
   },
 };
